@@ -1,0 +1,373 @@
+.header
+  position absolute
+  left 0
+  right 0
+  flex-shrink 0
+  z-index 15
+
+  &--second,
+  &--third
+    display flex
+    align-items center
+    height 65px
+
+    @media $tablet
+      flex-direction column
+      height 154px
+
+  &--second
+    background-color $white
+
+  &--third
+    background-color $black
+
+    @media $tablet
+      background-color $white
+
+  &--fourth
+    height 65px
+    background-color #ffffff
+
+    @media $tablet
+      height 120px
+
+  &__logo
+    position fixed
+    top 14px
+    left 20px
+    line-height 1.1
+    color #000
+    text-decoration none
+    z-index 1001
+
+    @media $tablet
+      top 12px
+
+    span
+      border none
+
+    &--details
+      padding-left 40px
+
+      .header__logo-back
+        position absolute
+        top 50%
+        left 7px
+        transform translateY(-50%)
+        border none
+
+    @media $tablet
+      top 50px
+      left 50px
+
+    ^[0]--second &
+    ^[0]--third &
+      position relative
+      left auto
+      top auto
+      transform none
+      padding 10px 0
+      margin 0 20px
+
+      @media $tablet
+        text-align center
+
+    ^[0]--second &
+      @media $tablet
+        padding 28px 0 22px
+
+    ^[0]--third &
+      color $white
+
+      @media $tablet
+        padding 24px 0
+        color $black
+
+    ^[0]--fourth &
+      @media $tablet
+        top 34px
+
+    &-back
+      display inline-block
+      vertical-align middle
+
+    &-name
+      display block
+      font-size 20px
+      font-family fontSub
+
+      @media $mobile
+        font-size 26px
+
+      @media $tablet
+        font-size 32px
+
+      ^[0]--second &
+      ^[0]--third &
+        @media $tablet
+          font-size 2.25rem
+
+    &-slogan
+      font-weight 500
+      font-size 9px
+      text-transform uppercase
+      letter-spacing 0.15em
+      margin-right -0.15em
+
+      @media $mobile
+        font-size 12px
+
+      @media $tablet
+        font-size 14px
+
+      ^[0]--second &
+      ^[0]--third &
+        @media $tablet
+          color #888
+
+  &__menu
+    @media $tablet
+      ^[0]--second &
+      ^[0]--third &
+        flex-direction row
+        justify-content center
+        align-items center
+        flex-grow 1
+        width 100%
+        background-color inherit
+        transform none
+
+      ^[0]--second &
+        height auto
+        padding-bottom 22px
+
+      ^[0]--third &
+        background-color #000
+
+      ^[0]--fourth &
+        flex-direction column
+        justify-content center
+        position absolute
+        top 50%
+        right 50px
+        overflow hidden
+        width auto
+        height auto
+        background-color inherit
+        padding 0
+        transform translate(0, -50%)
+
+      &-items
+        ^[0]--second &
+        ^[0]--third &
+        ^[0]--fourth &
+          flex-direction row
+          justify-content center
+
+      &-item
+        align-self flex-start
+        position relative
+        color #fff
+        font-size 1.25rem
+        line-height: 1.2
+        text-decoration none
+        padding 10px 0 10px
+        margin 5px 0
+        transition: none;
+
+        ^[0]--second &
+        ^[0]--third &
+        ^[0]--fourth &
+          padding 8px
+          font-size 14px
+
+        ^[0]--second &
+          color #000
+          margin 0 40px 0 0
+
+          &:last-child
+            margin-right 0
+
+          &:hover
+            color #000!important
+
+        ^[0]--third &
+          margin 0 40px 0 0
+          color #ffffff
+
+          &:last-child
+            margin-right 0
+
+        ^[0]--fourth &
+          color #000
+          margin 0 38px 0 0
+
+          &:last-child
+            margin-right 0
+
+          &:hover
+            color #000!important
+
+        &::before
+          content ''
+          position absolute
+          top 30%
+          left 0
+          right 0
+          height 70%
+          opacity 1
+          transform scaleY(0)
+          transform-origin 100% 0%;
+          transition transform 300ms, opacity 120ms ease
+          background-color rgba(#000000, 0.2);
+
+          ^[0]--second &
+          ^[0]--third &
+          ^[0]--fourth &
+            left 8px
+            right calc(8px + 0.15em)
+
+        a:hover&
+          color $white
+
+          &::before
+            opacity 1
+            transform-origin 100% 100%;
+            transform scaleY(1)
+.menu
+  display flex
+  flex-direction column
+  justify-content center
+  position fixed
+  top 0
+  right 0
+  bottom 0
+  overflow-x hidden
+  overflow-y auto
+  width 100%
+  height 100vh
+  z-index 1000
+  background-color #000
+  transform translateX(100%)
+
+  @media $tablet-small
+    width 340px
+    padding 100px 0 0
+    justify-content flex-start
+
+  &__items
+    display flex
+    flex-direction column
+    align-items center
+    padding 0 20px
+
+    @media $tablet-small
+      align-items flex-start
+      padding 0 20px 0 60px
+
+  &__route
+    position relative
+    color #fff
+    font-size 1.25rem
+    line-height: 1.2
+    text-decoration none
+    padding 10px 0 10px
+    margin 5px 0
+    transition: none;
+
+    &::before
+      content ''
+      position absolute
+      top 30%
+      left 0
+      right 0
+      height 70%
+      opacity 1
+      transform scaleY(0)
+      transform-origin 100% 0%;
+      transition transform 300ms, opacity 120ms ease
+      background-color rgba(#000000, 0.2);
+
+    a:hover&
+      color $white
+
+      &::before
+        opacity 1
+        transform-origin 100% 100%;
+        transform scaleY(1)
+
+.toggle-menu
+    position fixed
+    top 21px
+    right 20px
+    z-index 100
+    width 40px
+    height 30px
+    z-index 1000
+    transition: none;
+
+    @media $tablet-small
+      top 17px
+
+    &__bar
+      position absolute
+      width 28px
+      height 2px
+      background-color #000
+
+      @media $tablet-small
+        width 40px
+
+      ^[0]_white &
+        background-color: $white
+
+      ^[0]_active &
+        background-color $white
+
+      &:nth-child(1)
+      &:nth-child(2)
+      &:nth-child(3)
+        opacity 1
+
+      &:nth-child(1)
+        top calc(50% - 10px)
+
+        @media $tablet-small
+          top calc(50% - 14px)
+
+        transform rotate(0deg)
+
+        ^[0]_active &
+          top 50%
+          transform rotate(45deg)
+
+      &:nth-child(2)
+        top 50%
+        opacity 1
+        transition opacity 150ms
+
+        ^[0]_active &
+          opacity 0
+
+      &:nth-child(3)
+        top calc(50% - 10px)
+
+        @media $tablet-small
+          top calc(50% + 14px)
+
+        transform rotate(0deg)
+
+        ^[0]_active &
+          top 50%
+          transform rotate(-45deg)
+
+      &:nth-child(1)
+      &:nth-child(3)
+        transition transform 150ms ease 0ms, top 150ms ease 150ms
+
+        ^[0]_active &
+          transition top 150ms ease, transform 150ms ease 150ms
+
+    @media $tablet
+      top 58px
+      right 50px

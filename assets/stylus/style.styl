@@ -1,0 +1,255 @@
+/*
+* Table of contents:
+* Typography
+* Modules (buttons, inputs, etc ...)
+* Header, Footer
+* Main, About, Contacts
+* Home galleries, home details
+* Projects, project details
+* Pricing
+* Blog Grid, Blog List, Blog Single, Sidebar
+* 404
+* Coming soon
+* Demo Switcher
+**/
+@require '_vars'
+
+html
+  font-size 13px
+
+  @media $mobile
+    font-size 14px
+
+  @media $tablet-small
+    font-size 16px
+
+body
+  position relative
+  color $black
+  font-size 1rem
+  font-weight 500
+  line-height 1.75
+  font-family font-primary
+  background-color #fff
+
+.overlay
+  animation fadeIn .5s
+  position fixed
+  top 0
+  right 0
+  bottom 0
+  left 0
+  z-index 11
+  background-color rgba(#fff, .7)
+
+  &_hide
+    animation fadeOut .5s forwards
+
+.page-over
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index -1;
+
+  .page-load &
+    z-index 10000
+
+.page-over__block
+  position: absolute;
+  width: 100%;
+  height: 101%;
+  transition: transform .0s;
+  background-color: #000;
+  transform: translateY(101%);
+
+  .page-load &
+    transition: transform .4s ease-in-out;
+    transform: translateY(0);
+
+  .page-load_start &
+    transition: transform .6s ease-in-out 0.4s;
+    transform: translateY(-101%);
+
+.barba-wrapper
+  display flex
+
+.barba-container
+  display flex
+  min-height 100vh
+  flex-direction column
+  background-color #fff
+
+main
+  flex-grow 1
+  min-height 100vh
+
+.center
+  display flex
+  width 100%
+  min-height 100vh
+  justify-content center
+  align-items center
+
+.invisible
+  opacity 0
+  visibility hidden
+
+.sticky-bottom
+  bottom 0
+  position fixed
+
+a
+  color inherit
+  transition all .2s
+
+  span
+    border-bottom 1px solid transparent
+    transition border 200ms ease
+
+  &:hover
+    color $gray-700
+    text-decoration none
+
+    span
+      border-bottom-color currentColor
+
+.link-under
+  > span
+    border-bottom 1px solid
+    transition border 200ms ease
+
+    h1 &, .h1 &,
+    h2 &, .h2 &
+      border-bottom-width 2px
+
+  &:hover
+    > span
+      border-bottom-color transparent
+
+.link-weight
+  position relative
+  color $gray-600
+  border-bottom none
+
+  &::before
+    font-weight 500
+    content attr(data-title)
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    opacity 1
+    transition opacity 300ms
+
+  &:hover
+    &::before
+      opacity 0
+
+img {
+  display block
+  vertical-align top
+  width 100%
+  max-width 100%
+  height 100%
+  object-fit: cover;
+	object-position: 30% 30%;
+	font-family 'object-fit: cover; object-position: 30% 30%;'
+}
+
+.prlx
+  position relative
+  z-index 1
+  overflow hidden
+
+.prlx-obj {
+  position absolute
+  object-fit cover
+  font-family 'object-fit cover;'
+  top 0
+  left 0
+  width 100%
+  height 100%
+  z-index 1
+}
+
+thumb-hover-rotate =
+  transform scale(1)
+  transition 300ms
+
+  &:hover
+    filter saturate(1.75)
+    transform scale(1.15)
+
+.position-relative {
+  position relative
+}
+
+.bg-gray
+  background-color $gray-200
+
+/*
+* Typography
+*/
+@require '_type'
+
+/*
+* Modules (buttons, inputs, etc ...)
+*/
+@require '_buttons.styl'
+@require '_form-custom.styl'
+
+/*
+* Header, Footer
+*/
+@require '_header'
+@require '_footer'
+
+/*
+* Main, About, Contacts
+*/
+@require '_main.styl'
+
+/*
+* Home galleries, home details
+*/
+@require '_home-slider.styl'
+@require '_home-details.styl'
+
+/*
+* Projects, project details
+*/
+@require '_projects'
+@require '_projects-details'
+
+/*
+* Pricing
+*/
+@require '_pricing'
+
+/*
+* Blog Grid, Blog List, Blog Single, Sidebar
+*/
+@require '_blog-posts'
+@require '_blog-single'
+@require '_blog-gallery'
+@require '_sidebar'
+
+/*
+* 404
+*/
+@require '_404'
+
+/*
+* Coming soon
+*/
+@require '_coming-soon'
+
+/*
+* Demo navigation
+*/
+@require '_demo'
+
+@require '_keyframes'

@@ -1,0 +1,111 @@
+.blog-carousel
+  border 1px solid $gray-200
+
+  &__item
+    max-height 290px
+    background-color $gray-500
+
+    @media $tablet-small
+      height 400px
+      max-height none
+
+    img
+      cursor url(../images/zoom.png), auto
+      transition 300ms ease
+
+      &:hover
+        filter brightness(0.75)
+        transform scale(1.2)
+
+    &.active
+      display block
+
+      img
+        width 100%
+
+  &__control
+    display flex
+    align-items center
+    justify-content center
+    position absolute
+    top 0
+    bottom 0
+    width 12px
+    width 70px
+    cursor pointer
+
+    a:hover&
+      &::before
+      &::after
+        background-color $gray-500
+
+    &--prev
+      left 0
+
+      &::before
+        transform-origin 0 50%
+        transform rotate(-45deg)
+
+      &::after
+        transform-origin 0 50%
+        transform rotate(45deg)
+
+    &--next
+      right 0
+
+      &::before
+        transform-origin 100% 50%
+        transform rotate(-45deg)
+
+      &::after
+        transform-origin 100% 50%
+        transform rotate(45deg)
+
+    &::before
+    &::after
+      position absolute
+      top 0
+      right 0
+      left 0
+      bottom 0
+      content ''
+      width 12px
+      height 1px
+      margin auto
+      background-color $black
+      transition all .2s
+
+  &__thumbs
+    position static
+    display flex
+    justify-content center
+    flex-wrap wrap
+    padding-top 1.25rem
+    margin 0 0 0 -1.25rem
+
+    > li
+      width 3.75rem
+      height 3.75rem
+      margin 0 0 1.25rem 1.25rem
+      text-indent inherit
+
+      &::before
+      &::after
+        display none
+
+  &__thumb
+    opacity .5
+    border 1px solid $gray-600
+    cursor pointer
+    transition all .2s
+    background-color $gray-500
+
+    &:last-child
+      margin-right 0
+
+    &.active
+      opacity 1
+
+    &:hover
+      opacity .8
+

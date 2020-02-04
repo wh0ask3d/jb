@@ -1,0 +1,133 @@
+.blog-post-content
+  max-width 390px;
+  padding-bottom 6.25rem
+  margin: auto;
+
+  @media $tablet-small
+    max-width 100%
+
+  @media $tablet
+    padding-bottom 140px
+
+  &__more
+    text-align center
+
+.blog-post
+  margin-bottom 6.25rem
+
+  &:nth-child(1)
+    opacity: 1!important;
+
+  &--right
+    margin-left auto
+
+  &.scroll-point
+    transform translateY(75px)
+    opacity 0
+    transition opacity 2s ease, transform 1.5s ease
+
+    &.point
+      opacity 1
+      transform translateY(0)
+
+      img
+        filter saturate(1.5)
+
+        &:hover
+          filter saturate(2)
+
+  @media $tablet
+    margin-bottom 14vh
+
+  &__top
+    display flex
+    flex-direction column
+
+  &__pic
+    img
+      display inline-block
+      width: auto;
+      height: auto;
+
+  &__category
+    margin-bottom 0.5rem
+    text-align right
+
+    ^[0]--right &
+      text-align left
+
+      @media $tablet-small
+        margin-top 0.5rem
+        margin-bottom 0
+
+    a
+      font-size 14px
+      text-transform uppercase
+      color $gray-700
+      text-decoration none
+      border-bottom 1px solid transparent
+      letter-spacing 0.15em
+
+      &:hover
+        border-bottom-color currentColor
+
+  &__desc
+    padding-top 1.75rem
+
+    ^[0]--right &
+      text-align right
+
+    @media $tablet-small
+      padding 1.75rem 4% 0
+      margin-top 10vh
+
+  &__title
+    margin-top 0
+    margin-bottom 1.25rem
+    line-height 1.3
+
+    @media $tablet
+      font-size $h1-font-size
+
+    a
+      color inherit
+
+  &__preview-text
+    font-size 14px
+
+  &__meta
+    font-size 14px
+    font-weight 500
+    color $gray-600
+    margin-left -2.25rem
+
+    > *
+      display inline-block
+      margin-left 2.25rem
+
+    a
+      margin-right 0.25rem
+
+      @extend .link-under
+
+.blog-post-list
+  margin-bottom 3.5rem
+
+  .blog-post
+    &__pic
+      img
+        filter opacity(50%)
+        transition 1s
+
+    @media $tablet
+      &__desc
+        margin-top 4vh
+        padding-top 3rem
+
+      &__title
+        margin-bottom 3rem
+        margin-left -200px
+
+  &:hover
+    img
+      filter opacity(100%) saturate(1.5)

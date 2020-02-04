@@ -1,0 +1,137 @@
+.blog-single
+  &__intro
+    height 260px
+    margin-bottom: 30px
+
+    @media $tablet
+      height 400px
+      margin-bottom: 130px
+
+  &__header
+    text-align center
+
+    .col-auto
+      max-width 100%
+
+  h1
+    display inline-block
+    margin-bottom 0.5rem
+
+  &__date
+    margin-bottom 2.5rem
+    font-weight 500
+    font-size 14px
+    color $gray-600
+
+  &__nav
+    padding 2rem 0 1.5rem
+    margin-bottom 3rem
+    border-bottom 1px solid $gray-200
+
+    h4
+      margin-right 0.25rem
+      line-height: inherit
+
+  &__tags
+    margin-bottom 0
+
+    a
+      @extend .link-weight
+
+  &__share
+    margin 0 -0.5rem
+
+    > *
+      margin 0.5rem
+
+    a
+      font-size 1.75rem
+      opacity 1
+      color $gray-600
+
+.blog-related
+  margin-bottom 3.25rem
+
+  h4
+    font-weight 500
+    font-size $h5-font-size
+    margin-bottom: 0
+
+  &__thumb
+    position relative
+    min-height: 220px
+    overflow hidden
+
+    @media $mobile
+      min-height: auto
+      padding-top 100%
+
+    img
+      position absolute
+      top 0
+      left 0
+      {thumb-hover-rotate}
+
+  &__date
+    font-size: 10px
+    font-weight: 600
+    color: $gray-600
+
+.blog-room
+  margin-bottom 6rem
+
+  &__item
+    &:first-child
+      padding-top 0
+      margin-top 0
+      border-top none
+
+    padding-top 1.5rem
+    border-top 1px solid $gray-200
+    border-bottom 1px solid $gray-200
+    margin-bottom -1px
+
+  p
+    &:last-of-type
+      margin-bottom 0
+
+  &__author
+    margin-bottom 0
+    font-size 14px
+    font-weight 700
+
+  &__date
+    font-weight 600
+    font-size 10px
+    color $gray-600
+
+  &__reply
+    display inline-flex
+    align-items center
+    margin-bottom 1.25rem
+    text-decoration none
+    font-weight 500
+    font-size 14px
+    color $gray-600
+
+    &:hover
+      color $black
+
+      &::before
+        transform scaleX(0.5)
+
+    &::before
+      display block
+      content ''
+      width 64px
+      margin-right 1rem
+      border-bottom 2px solid
+      transform scaleX(1)
+      transform-origin 100% 50%
+      transition 300ms ease
+
+.blog-feedback
+  padding 4rem 0
+
+  @media $tablet
+    padding-bottom 8.5rem

@@ -1,0 +1,57 @@
+.placeholder
+  font-weight normal
+  letter-spacing: 0.12em
+
+.form-group
+  margin-bottom 2.25rem
+
+.form-control
+  display block
+  width 100%
+  font-size 14px
+  background-color transparent
+  border 0
+  border-bottom 1px solid $gray-600
+  padding 0 3px
+  transition all 200ms, color 50ms
+  border-radius 0
+  background-color transparent
+  outline none
+  box-shadow none
+  color transparent
+
+  &:not(textarea)
+    height 39px
+
+  &:focus
+    border-bottom-color $black
+    outline none
+    outline none
+    box-shadow none
+    background-color transparent
+    color $black
+    transition all 200ms, color 500ms 200ms
+
+  & + .placeholder
+    position absolute
+    top -20px
+    left 3px
+    line-height 1.5
+    color $gray-500
+    pointer-events none
+
+    span
+      display inline-block
+      transform-origin 0 0
+      transform translateY(25px)
+      transition transform 200ms ease
+
+  &:focus + .placeholder span
+    transform translateY(0)
+    color $gray-600
+
+textarea
+  resize none
+
+  &.form-control:focus + .placeholder span
+    transform translateY(-5px)

@@ -1,0 +1,162 @@
+.page-hero
+  display flex
+  flex-direction column
+
+.page-title
+  display flex
+  flex-direction column
+  justify-content center
+  padding 110px 15px 54px
+  text-align center
+
+  @media $tablet
+    height auto;
+    padding-top 180px
+    margin-bottom 5rem;
+    font-size 1.25rem
+
+  @media $tabletPro
+    &_full
+      min-height 74vh
+      padding-top 180px
+      margin 0
+
+  h1
+    margin-bottom: 0.25rem
+    font-size 3rem
+    line-height 1.1
+    font-family font-secondary
+    color $black
+
+    @media $mobile
+      font-size 4rem
+
+    @media $tablet
+      margin-bottom 1.5rem
+      font-size 6rem
+
+  &__caption
+    color $gray-600
+    letter-spacing 0.15em
+    font-weight 500
+    font-size 1.25rem
+
+    @media $tablet
+      font-size 1.5rem;
+
+  &__desc
+    font-size inherit
+    color $gray-600
+
+.line
+  margin: 2rem auto 0
+
+  &::before
+    content ''
+    display block
+    width 1px
+    height 130px
+    margin auto
+    background-color $gray-600
+
+  &__scrollr
+    position fixed
+    bottom 20px
+    left 50%
+    transform translateX(-50%)
+    font-family font-secondry
+    font-size 1.25rem
+    font-weight 500
+    z-index 10
+
+.about
+  max-width 480px
+  padding-bottom 3.25rem
+  margin 0 auto
+
+  @media $tablet
+    max-width 100%
+    margin-top -3.25rem
+
+  &__col
+    margin-bottom 3rem
+
+  &__portrait
+    text-align center
+    border 1px solid $gray-800
+
+    @media $desktop
+      margin 0 30px;
+
+.about-list
+  display table
+  font-size 1.25rem
+
+  @media $tablet
+    margin 0
+
+  > *
+    display table-row
+    margin-bottom 0
+
+    > *
+      display table-cell
+      white-space nowrap
+      font-weight 500
+
+      &:first-child
+        min-width 120px
+        padding-right 3rem
+        color $gray-600
+
+.about-download
+  .btn
+    max-width 100%
+    margin auto
+
+    @media $tablet
+      max-width 300px
+
+.contacts
+  padding-bottom 5rem
+
+  @media $tablet
+    padding-bottom 9.25rem
+
+  &__right
+    margin-bottom 3rem
+
+    @media $tablet
+      padding-top 7rem
+
+.contacts-list
+  margin-bottom 1.5rem
+  font-weight 500
+  font-size 1.25rem
+
+  > *
+    margin-bottom 0.25rem
+
+    > *:first-child
+      font-weight 700
+      margin-right 0.75rem
+
+.contacts-social
+  display inline-flex
+  flex-wrap wrap
+  margin-left -1.25rem
+
+  > *
+    margin-left 1.25rem
+
+    a
+      position relative
+      display block
+      line-height 1
+      z-index 1
+      font-size 36px
+      overflow hidden
+      color $black
+
+      &:hover
+        color $gray-600

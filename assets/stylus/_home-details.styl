@@ -1,0 +1,126 @@
+.home-details
+  position relative
+
+  &__desc
+    position absolute
+    left: 0;
+    width: 100%;
+    padding: 10px 15px 15px;
+    bottom 0;
+    background-color #fff;
+    z-index 3
+
+  &__title
+    font-weight 600
+    font-size 1.25rem
+    line-height 1.25
+    height 1.5rem
+    margin auto
+    overflow hidden
+    text-align center
+
+  &__title-link
+    display inline
+
+    span
+      position relative
+      opacity 1
+      transition opacity 0s ease-in
+      background-color #fff
+      border none!important
+
+      &::after
+        display none
+        content ''
+        position absolute
+        bottom 0
+        left 0
+        right 0
+        border-bottom 2px solid
+
+      .animated-fade &
+        opacity 0
+        transition opacity 0s ease-in
+
+  &__title-line
+    position fixed
+    bottom 0
+    left 0
+    width 100%
+    height 4px
+    background-color $black
+    transform-origin center left
+    transform scaleX(1)
+    transition transform 1200ms ease
+
+    .animated-fade &
+      transform-origin center right
+      transform scaleX(0)
+
+  &__item
+    overflow hidden
+
+    &.swiper-slide-active
+      z-index 2
+      opacity 1
+
+  &__gallery
+    height 100vh
+    padding-top 65px
+    opacity 0
+    transition 0.8s ease-in-out 0.5s
+
+    .swiper-slide-active &
+      transition 0.2s ease-in-out 0s
+      opacity 1
+
+    img
+      opacity 1
+      transition 0.2s ease-in-out
+
+      &:hover
+        opacity 0.8
+
+  @media $tablet
+    &__item
+      &::after
+        transition transform 3s ease 1s
+
+        .swiper-slide-active&
+          opacity 1
+          transition transform 2s linear 1s
+
+    &__gallery
+      width 76%
+      padding 14vh 60px 7vh 15px
+      margin-left auto
+
+    &__desc
+      width 40%
+      left 15px
+      padding 0
+      bottom 25vh
+      background-color transparent
+
+    &__title
+      width 76%
+      height auto
+      margin 0
+      margin-left auto
+      font-weight 500
+      font-size 2vw
+      text-align left
+
+    &__title-line
+      position absolute
+      top auto
+      bottom 50%
+      left 2%
+      width 18%
+      height 2px
+      background-color currentColor
+
+    &__title-link
+        span
+          &::after
+            display block

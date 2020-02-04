@@ -1,0 +1,89 @@
+.coming-soon
+  &__top
+    display flex
+    flex-direction column
+    text-align center
+
+    > *
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 54px 0;
+
+  &__logo
+    text-align center
+    margin-bottom 3rem
+    display inline-flex
+    flex-wrap: wrap;
+    flex-direction column
+
+    &-name
+      font-size 2rem
+      line-height: 1.2
+      font-family font-secondary
+
+    &-slogan
+      margin-right -0.15em
+      letter-spacing 0.15em
+      font-size 12px
+      font-weight 600
+      color $gray-600
+
+  &__title
+    margin-bottom 4rem
+    font-weight 600
+    font-size 2.75rem
+    line-height 1.2
+    text-align center
+
+    @media $tablet-small
+      font-size 3.75rem
+
+
+  &__tick
+    max-width 700px
+    width 100%
+    margin auto
+
+    .row
+      margin 0 -10px
+
+    [class*=col]
+      display flex
+      flex-direction column
+      align-items center
+      padding: 0 10px;
+      margin-bottom 5vh
+
+    .caption
+      margin-bottom 0
+      font-weight 600
+      font-size 0.75rem
+      letter-spacing 0.15em;
+      line-height 1
+
+      @media $mobile
+        font-size 1.25rem;
+        letter-spacing: normal;
+
+    .tick
+      font-size 3rem
+      line-height 1
+      font-family font-secondary
+
+      @media $mobile
+        font-size 4rem
+
+      @media $tablet
+        font-size 6rem
+
+  &__feedback
+    padding 70px 0
+
+    @media $tablet
+      padding 90px 0 140px
+
+    .feedback-form
+      max-width 570px
+      margin auto

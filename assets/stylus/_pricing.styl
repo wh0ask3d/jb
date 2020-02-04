@@ -1,0 +1,112 @@
+pricing-gutter-sm = 8%
+pricing-gutter-lg = 15%
+
+.pricing
+  position relative
+
+.pricing-row
+  margin-bottom 1.5rem
+  overflow hidden
+
+  @media $tablet-small
+    margin-bottom 4rem
+
+  @media $tablet
+    display flex
+    align-items flex-end
+    justify-content center
+
+    .container
+      width 100%
+      max-width 1200px
+
+  &__wrap
+    width 100%
+
+  &__item
+    margin-bottom 4.75rem
+
+.pricing-card
+  position relative
+  width 100%
+  max-width 380px;
+  padding 3em 0 9.25em
+  margin 0 auto
+  background-color #eee
+  font-size 16px
+
+  @media $desktop
+    width auto
+    margin 0 4%
+
+  &__body
+    padding 0 pricing-gutter-sm
+
+    @media $tablet
+      padding 0 10%
+
+    @media $desktop
+      padding 0 pricing-gutter-lg
+
+  &__header
+    padding 0 1.75rem
+    margin-bottom 2.25rem
+
+  &__title
+    margin-bottom -0.5rem
+    font-size 1.5rem
+    text-align center
+    white-space nowrap
+
+  &__cost
+    font-size 4.5rem
+    font-family font-secondary
+    line-height 1
+    text-align center
+    white-space nowrap
+
+  &__currency
+    display inline-block
+    vertical-align middle
+    font-weight 500
+    font-size 2.25rem
+    margin-right 10px
+    font-family font-primary
+
+  &__descr
+    margin-bottom 1rem
+    font-weight normal
+    line-height 1.3
+
+  &__features
+    display inline-flex
+    flex-direction: column
+    list-style none
+    padding-left 0
+    margin 0
+
+    li
+      position relative
+      padding-left 18px
+      margin-bottom 0.25rem;
+
+      &::before
+        position absolute
+        top 6px
+        left 0
+        width 15px
+        height @width
+        background url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBkPSJNMTczLjg5OCA0MzkuNDA0bC0xNjYuNC0xNjYuNGMtOS45OTctOS45OTctOS45OTctMjYuMjA2IDAtMzYuMjA0bDM2LjIwMy0zNi4yMDRjOS45OTctOS45OTggMjYuMjA3LTkuOTk4IDM2LjIwNCAwTDE5MiAzMTIuNjkgNDMyLjA5NSA3Mi41OTZjOS45OTctOS45OTcgMjYuMjA3LTkuOTk3IDM2LjIwNCAwbDM2LjIwMyAzNi4yMDRjOS45OTcgOS45OTcgOS45OTcgMjYuMjA2IDAgMzYuMjA0bC0yOTQuNCAyOTQuNDAxYy05Ljk5OCA5Ljk5Ny0yNi4yMDcgOS45OTctMzYuMjA0LS4wMDF6Ii8+PC9zdmc+') no-repeat 0 0 / cover
+        content ''
+
+  &__footer
+    position absolute
+    bottom 60px
+    left 0
+    right 0
+    padding 0 15px
+    text-align center
+
+    .btn
+      margin auto
+      max-width 250px

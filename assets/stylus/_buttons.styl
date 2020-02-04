@@ -1,0 +1,83 @@
+.btn
+  display inline-flex
+  align-items center
+  justify-content center
+  height 3.125rem
+  width 100%
+  max-width 300px
+  padding 0.5rem 1rem
+  padding-left calc(1rem + 0.15em)
+  font-weight 500
+  font-size 0.875rem
+  letter-spacing 0.15em
+  color $black
+  text-transform uppercase
+  background-color transparent
+  border 1px solid currentColor
+  cursor pointer
+  transition all 300ms, width 1s linear
+  border-radius 0px
+  white-space nowrap
+
+  &:focus
+    box-shadow: none
+
+  > i
+    margin-right 1rem
+
+  @media $tablet
+    flex-grow 0
+    max-width 350px
+
+  &:hover
+  &:focus
+    background-color $black
+    border-color $black
+    color #fff
+
+  &--load
+    max-width 350px
+
+    &.spin
+      max-width 220px
+
+    > i
+      .spin&
+        animation spinner 1s linear infinite
+
+    .text i
+      animation spinDots 1s backwards
+      margin-right 0.25rem
+
+.pswp .pswp__ui .pswp__button.pswp__button--arrow--left,
+.pswp .pswp__ui .pswp__button.pswp__button--arrow--right
+  height 70px
+  width 70px
+  opacity: 1;
+
+  &::before
+    display none
+
+  i
+    height 100%
+    width 30px
+    display flex
+    align-items center
+    justify-content center
+    margin 0 auto
+    font-size 1.75rem;
+    background-color #111111
+    color #ffffff
+    pointer-events: none;
+
+@keyframes spinner
+  from
+    transform rotate(0deg)
+  to
+    transform rotate(360deg)
+
+@keyframes spinDots
+  from
+    opacity 0
+  to
+    opacity 1

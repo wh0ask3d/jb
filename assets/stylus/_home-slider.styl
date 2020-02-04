@@ -1,0 +1,120 @@
+slider-height = "calc(100vh - %s - 3.5rem)"
+
+.homepage-slider
+  display flex
+  flex-direction column
+  margin-top $header-height
+  overflow hidden
+  background-color #fff
+
+  &__item
+    height slider-height % $header-height
+    overflow hidden
+
+    &-pic
+      filter saturate(1.3)
+      transition opacity 200ms ease-in-out
+      opacity 1
+
+      &:hover
+        opacity 0.6
+
+  &__nav
+    height 3.5rem
+    display flex
+
+  &__caption
+    display flex
+    justify-content center
+    align-items center
+    width 100%
+    text-align center
+    background-color #fff
+    font-weight 500
+    color $black
+
+    span {
+      display inline-block
+      height 1.5rem
+      overflow hidden
+    }
+
+    ^[0]--dark &
+      background-color $black
+      color #fff
+
+  &__arrow
+    position relative
+    width 52px
+    cursor pointer
+    background-color #fff
+    z-index 10
+
+    .homepage-slider--dark &
+      background-color $black
+
+    &::before
+    &::after
+      position absolute
+      top 50%
+      height 1px
+      width 14px
+      background-color $black
+      content ''
+      transition all .2s
+      ^[0]--dark &
+        background-color #fff
+
+    a:hover&
+      &::before
+      &::after
+        background-color $gray-600
+
+    &--left
+      left 0
+
+      &::before
+      &::after
+        right 10px
+
+      &::before
+        transform-origin 0 50%
+        transform rotate(-45deg)
+
+      &::after
+        transform-origin 0 50%
+        transform rotate(45deg)
+
+    &--right
+      right 0
+
+      &::before
+      &::after
+        left 10px
+
+      &::before
+        transform-origin 100% 50%
+        transform rotate(-45deg)
+
+      &::after
+        transform-origin 100% 50%
+        transform rotate(45deg)
+
+  @media $tablet
+    margin-top $header-height-large
+
+    &__item
+      height slider-height % $header-height-large
+
+    &__arrow
+      width 82px
+
+      &--left
+        &::before,
+        &::after
+          right 20px
+
+      &--right
+        &::before
+        &::after
+          left 20px

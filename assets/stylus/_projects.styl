@@ -1,0 +1,447 @@
+category-offset = 2.5rem
+
+.scene
+  position fixed
+  top 0
+  left 0
+  display flex
+  align-items: center
+  justify-content center
+  padding 15px;
+  width 100%
+  height 100%
+  background-color #fff
+  z-index 1000
+  overflow hidden
+
+  &__container
+    position: relative;
+    max-width: 1280px;
+    width: 100%;
+
+  &__thumbnail
+    height 100vh
+    width 100vw
+    margin-left -15px
+    background: $gray-200;
+
+    img
+      filter brightness(1.1)
+
+  &__signature
+    position absolute
+    right 0
+    top 140px
+
+  &__project-title
+    margin-bottom 0.75rem
+    font-size 8vw
+    font-weight 500
+    line-height 1.1
+    font-family font-secondary
+
+  &__project-caption
+    font-size 3vw
+    margin 0
+    line-height 1
+    white-space nowrap
+    color $gray-600
+    text-transform uppercase
+    letter-spacing 0.15em
+    margin-right -0.15em
+    font-weight 500
+
+  &__progress
+    position absolute
+    bottom 0
+    left 0
+    transform translateX(-200%)
+    background-color #000
+    width 200%
+    height 5px
+    z-index 10
+
+  @media $tablet-small
+    &__thumbnail
+      padding: 90px;
+      margin 0
+      width: 800px
+      height: 620px;
+
+    &__project-title
+      font-size 82px
+
+    &__project-caption
+      font-size 22px
+
+.projects
+  padding-top 24px;
+  overflow hidden
+
+  .container
+    width 100%
+    max-width 1380px
+
+  @media $tablet
+    padding-top: 100px
+    padding-bottom 0
+
+.project
+  position relative
+  display flex
+  flex-direction column
+  justify-content center
+  align-items center
+  margin-bottom: 54px;
+  opacity 0
+  transform translateY(50px)
+  transition opacity 2s, transform 1.5s
+
+  &:nth-child(1)
+    opacity 1!important
+
+  &.point
+    opacity 1
+    transform translateY(0px)
+
+  &__item
+    display flex
+    justify-content center
+    flex-direction column
+    position relative
+    max-width 430px;
+    width 100%
+    min-height 290px
+    max-height 76vh
+    background-color $black
+
+    &-top
+      position relative
+      display flex
+      flex-grow 1
+
+    &-chart
+      position absolute
+      z-index 1
+      display flex
+      justify-content center
+      align-items center
+      width 50px
+      height 50px
+      font-family font-secondary
+      font-size 3rem
+      line-height 1
+      text-transform uppercase
+      background-color $white
+
+    &-name
+      padding 1rem 20px 1.25rem 20px
+      margin 0
+      font-weight 600
+      font-size 14px
+      opacity 0
+      color $black
+      transition transform 1s ease, opacity 1s ease
+      background-color $black
+      color $white
+      text-align center
+
+      @media $tablet-small
+        font-size 3.2rem
+
+      span
+        border-bottom-width 1px
+
+      .point &
+        transform translateY(0)
+        opacity 1
+
+    &-pic
+      position relative
+      flex-grow 1
+      display flex
+      background-color $gray-400
+
+      img
+        display block
+        filter saturate(2.75)
+        transition filter 500ms
+
+    &-category
+      position absolute
+      padding-bottom 4px
+      font-weight 600
+      font-size 12px
+      line-height 1
+      text-decoration none
+      text-transform uppercase
+      letter-spacing 0.15em
+      transition transform 1s ease
+      color $white
+
+      &:hover
+        color $white
+
+        &::after
+          transform-origin 0 50%
+          transform scaleX(1)
+
+      &::after
+        position absolute
+        right 3px
+        bottom 0
+        left 0
+        content ''
+        border-bottom 1px solid
+        display block
+        transform scaleX(0)
+        transform-origin 100% 50%
+        transition transform 300ms ease
+
+      span
+        display block
+        transform translateX(-100%)
+        border none
+        opacity 0
+        transition opacity 1.5s ease 0.5s, transform 1s ease 0.5s
+
+        .point &
+          opacity 1
+          transform translateX(0)
+
+    &_type-1
+      padding-right 20px
+
+      & ^[1]-chart
+        top 0
+        left 0
+
+      & ^[1]-category
+        right 0px
+        bottom 0px
+        transform-origin 100% 100%
+        transform translate(0, 0) rotate(90deg)
+
+      & ^[1]-name
+        margin-right: -20px;
+
+    &_type-2
+      padding-right 20px
+
+      & ^[1]-chart
+        bottom 0
+        left 0
+
+      & ^[1]-category
+        right 0px
+        bottom 0px
+        transform-origin 100% 100%
+        transform translate(0, 0) rotate(90deg)
+
+      & ^[1]-name
+        margin-right: -20px;
+
+    &_type-3
+      padding-left 20px
+
+      & ^[1]-chart
+        top 0
+        right 0
+
+      & ^[1]-category
+        bottom 0px
+        left 0px
+        transform-origin 0 100%
+        transform translate(0, 0) rotate(-90deg)
+
+      & ^[1]-name
+        margin-left: -20px;
+
+    &_type-4
+      padding-left 20px
+
+      & ^[1]-chart
+        top 0
+        right 0
+
+      & ^[1]-category
+        bottom 0px
+        left 0px
+        transform-origin 0 100%
+        transform translate(0, 0) rotate(-90deg)
+
+      & ^[1]-name
+        margin-left: -20px;
+
+    &_type-5
+      padding-left 20px
+
+      & ^[1]-chart
+        bottom 0
+        right 0
+
+      & ^[1]-category
+        bottom 0px
+        left 0px
+        transform-origin 0 100%
+        transform translate(0, 0) rotate(-90deg)
+
+      & ^[1]-name
+        margin-left: -20px;
+
+  @media $tablet-small
+    position relative
+    display flex
+    padding 0
+    margin-bottom 0
+
+    &__item
+      display block
+      width 60%
+      max-width none
+      max-height: none
+      padding 0
+      margin 0 auto 150px
+      background-color $gray-200
+
+      &-top
+        position static
+        margin 12% 16%
+
+      &-chart
+        width auto
+        height auto
+
+      &-pic
+        display block
+        min-height 220px
+
+      &-name
+        position absolute
+        padding 0
+        background-color transparent
+        color $black
+        font-size 4.5vw
+        text-align left
+
+        span
+          border-bottom-width 2px
+
+      &-chart
+        background-color transparent
+        font-size 10vw
+
+      &-category
+        color $gray-600
+
+        &:hover
+          color $gray-800
+
+      &_type-1
+        width 55%
+
+        & ^[1]-top
+          margin 14% 18%
+
+        & ^[1]-chart
+          transform translate(-47%, -36%)
+
+        & ^[1]-name
+          top: 70%
+          right 90%
+          transform translate(0px, 0px)
+
+        & ^[1]-category
+          right 0
+          bottom - category-offset
+          transform rotate(0deg)
+
+      &_type-2
+        width 46%
+        transform translateX(8%)
+
+        & ^[1]-top
+          margin 18% 17%
+
+        & ^[1]-chart
+          transform translate(-30%, 0px)
+
+        & ^[1]-name
+          top 14%
+          left 10%
+          transform translate(90%, 0px)
+
+        & ^[1]-category
+          right - category-offset
+          bottom 0
+          transform-origin 100% 100%
+          transform rotate(-90deg) translateX(100%)
+
+      &_type-3
+        width 76%
+
+        & ^[1]-top
+          margin 8% 14%
+
+        & ^[1]-chart
+          transform translate(-50%, -50%)
+
+        & ^[1]-name
+          top: 90%
+          left 2%
+          transform translate(0px, 0px)
+
+        & ^[1]-category
+          top - category-offset
+          bottom auto
+          left 0
+          transform rotate(0deg) translateX(0)
+
+      &_type-4
+        width 50%
+
+        & ^[1]-top
+          margin 16%
+
+        & ^[1]-chart
+          transform translate(55%, 0px)
+
+        & ^[1]-name
+          top 54%
+          left 30%
+          transform translate(85%, 0px)
+
+        & ^[1]-category
+          bottom - category-offset
+          left 0
+          transform rotate(0deg) translateX(0)
+
+      &_type-5
+        width 45%
+        transform translateX(-10%)
+
+        & ^[1]-top
+          margin 17% 15%
+
+        & ^[1]-chart
+          transform translate(45%, -0%)
+
+        & ^[1]-name
+          top: 11%;
+          right: 90%;
+
+        & ^[1]-category
+          bottom 0
+          left - category-offset
+          transform-origin bottom right
+          transform rotate(-90deg) translate(100%, -30%)
+
+  @media $desktop
+    &__item
+      margin-bottom 200px
+
+      &-chart
+        font-size 9rem
+
+      &-name
+        font-size 3.5rem
