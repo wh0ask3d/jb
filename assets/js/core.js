@@ -26,8 +26,10 @@
   function App() {
     PrimaryNav.init();
 
-    $('.gallery a').simpleLightbox({});
-
+    if($('.gallery').length > 0) {
+      $('.gallery a').simpleLightbox({});
+    }
+    
     pageSlider();
     pageDetails();
     pageProject();
