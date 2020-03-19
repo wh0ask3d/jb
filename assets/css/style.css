@@ -3302,3 +3302,9 @@ a:hover.blog-carousel__control::after {
             transform: rotate(360deg);
   }
 }
+
+.gallery img {
+  display: inline;
+  width: auto;
+  margin: 4px 2px;
+}

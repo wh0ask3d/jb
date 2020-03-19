@@ -26,6 +26,8 @@
   function App() {
     PrimaryNav.init();
 
+    $('.gallery a').simpleLightbox({});
+
     pageSlider();
     pageDetails();
     pageProject();
