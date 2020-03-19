@@ -179,7 +179,7 @@ h2 .blog-post__meta a > span,
 .sidebar__tags a:hover::before {
   opacity: 0;
 }
-img {
+.projects img {
   display: block;
   vertical-align: top;
   width: 100%;
@@ -3304,8 +3304,5 @@ a:hover.blog-carousel__control::after {
 }
 
 .gallery img {
-  display: inline;
-  width: auto;
-  height: auto;
   margin: 4px 2px;
 }
